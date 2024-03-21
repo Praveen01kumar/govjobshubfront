@@ -11,4 +11,13 @@
       </div>
     </ng-container>
   </ng-container>
+
+  <div class="shapes-container" *ngIf="isLoading">
+    <div class="shapes"></div>
+  </div>
+
+  <div class="data-not-found" *ngIf="!jobListData">
+    <h2>No Records!</h2>
+  </div>
+
 </div>

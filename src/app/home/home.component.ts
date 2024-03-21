@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../services/api.service';
+import { Subject, finalize, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -9,19 +10,21 @@ import { ApiService } from '../services/api.service';
 export class HomeComponent implements OnInit {
 
   constructor(private apiservice: ApiService) { }
-
+  isLoading: boolean = false;
   jobListData: any;
-
+  private _unsubscribeAll: Subject<any> = new Subject<any>();
+  
   ngOnInit(): void {
     this.GetJobList();
   }
 
   GetJobList() {
-    this.apiservice.getJobList().subscribe((res: any) => {
+    this.isLoading = true;
+    this.apiservice.getJobList().pipe(takeUntil(this._unsubscribeAll), finalize(() => { this.isLoading = false; })).subscribe((res: any) => {
       if (res?.status) {
         this.jobListData = res?.data;
       }
-    }, (err) => { });
+    }, (err) => { this.isLoading = false; });
   }
 
 

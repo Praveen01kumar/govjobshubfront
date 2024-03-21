@@ -2,3 +2,10 @@
     <div class="innerHTMLData1" [innerHTML]="innerHtmlData1"></div>
     <div class="innerHTMLData" [innerHTML]="innerHtmlData2"></div>
 </div>
+<div class="shapes-container" *ngIf="isLoading">
+    <div class="shapes"></div>
+</div>
+
+<div class="data-not-found" *ngIf="((!innerHtmlData1)&&(!innerHtmlData2))">
+    <h2>No Records!</h2>
+</div>

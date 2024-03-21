@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../services/api.service';
 import { ActivatedRoute } from '@angular/router';
+import { Subject, finalize, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-postdetail',
@@ -13,6 +14,9 @@ export class PostdetailComponent implements OnInit {
     private apiservice: ApiService,
     private route: ActivatedRoute
   ) { }
+  
+  private _unsubscribeAll: Subject<any> = new Subject<any>();
+  isLoading: boolean = false;
 
   innerHtmlData1: any;
   innerHtmlData2: any;
@@ -25,7 +29,8 @@ export class PostdetailComponent implements OnInit {
   }
 
   GetHtml(id: string) {
-    this.apiservice.getDetailData(id).subscribe((res: any) => {
+    this.isLoading = true;
+    this.apiservice.getDetailData(id).pipe(takeUntil(this._unsubscribeAll), finalize(() => { this.isLoading = false; })).subscribe((res: any) => {
       const resData = res?.data?.detaildata;
       if (resData !== null) {
         let parser = new DOMParser();
@@ -38,7 +43,7 @@ export class PostdetailComponent implements OnInit {
         this.innerHtmlData1 = null;
         this.innerHtmlData2 = null;
       }
-    }, (err) => { });
+    }, (err) => { this.isLoading = false; });
   }
 
   modifyHtmlContent(html: string): string {
