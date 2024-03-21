@@ -1,0 +1,53 @@
+.home-page {
+    margin: 60px 0px;
+    padding: 0px 10%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+
+    .post-list {
+        max-width: 250px;
+        max-height: 320px;
+        border: 1px solid #865aef;
+        border-radius: 4px;
+        position: relative;
+
+        h2 {
+            font-weight: 700;
+            color: #06241b;
+            margin: 0px;
+            position: sticky;
+            top: 0px;
+            left: 0px;
+            background-color: #865aef;
+            border-top-left-radius: 2px;
+            border-top-right-radius: 2px;
+            padding: 8px 10px;
+            color: #fff;
+        }
+    }
+
+    .post-sub-list {
+        overflow-y: auto;
+        max-height: 78%;
+        padding: 12px;
+
+        .post-link {
+            color: #06241B;
+            font-weight: 500;
+            transition: all ease-in 0.5s;
+            position: relative;
+            margin-bottom: 14px;
+            display: inline-block;
+            font-size: 14px;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+                color: #7c0000;
+            }
+        }
+    }
+}
+

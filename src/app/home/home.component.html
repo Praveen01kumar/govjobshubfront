@@ -1,0 +1,14 @@
+<div class="home-page">
+  <ng-container *ngIf="jobListData">
+    <ng-container *ngFor="let jobs of jobListData">
+      <div class="post-list">
+        <h2>{{jobs?.post_name}}</h2>
+        <div class="post-sub-list">
+          <ng-container *ngFor="let item of jobs?.postdata">
+            <a class="post-link" [routerLink]="item?.id" routerLinkActive="active">{{item?.data_name}}</a>
+          </ng-container>
+        </div>
+      </div>
+    </ng-container>
+  </ng-container>
+</div>

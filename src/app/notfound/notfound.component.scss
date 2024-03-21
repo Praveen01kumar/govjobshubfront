@@ -1,0 +1,90 @@
+.not-found {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+
+    .text404 {
+        position: absolute;
+        font-size: 20rem;
+        opacity: 0.1;
+        color: #7f56d9b8;
+        z-index: -1;
+    }
+
+    .title {
+        font-size: 40px;
+        font-weight: 700;
+        color: #06241B;
+        text-align: center;
+    }
+
+    .discription {
+        color: #7E7EAA;
+        font-size: 16px;
+        font-weight: 500;
+        padding: 0px 16px;
+        text-align: center;
+    }
+
+    .action {
+        .go-back {
+            background: transparent;
+            font: inherit;
+            border: 1px solid #6558d3;
+            color: #6558d3;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: all ease 0.5s;
+            margin: 0px 12px;
+            cursor: pointer;
+
+            &:hover {
+                background: #6558d3;
+                color: #ffffff;
+                border-color: #ffffff;
+            }
+        }
+
+        .go-home {
+            @extend .go-back;
+        }
+    }
+}
+
+
+@media (min-width:0px) and (max-width:320px) {
+    .not-found {
+        .text404 {
+            font-size: 10rem;
+        }
+
+        .title {
+            font-size: 34px;
+            line-height: 14px;
+        }
+    }
+}
+
+@media (min-width:320px) and (max-width:425px) {
+    .not-found {
+        .text404 {
+            font-size: 12rem;
+        }
+
+        .title {
+            font-size: 40px;
+        }
+    }
+}
+
+@media (min-width:425px) and (max-width:550px) {
+    .not-found {
+        .text404 {
+            font-size: 15rem;
+        }
+    }
+}

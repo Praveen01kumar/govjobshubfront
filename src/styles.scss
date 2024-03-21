@@ -1,0 +1,86 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.innerHTMLData {
+
+    tbody,
+    td,
+    tfoot,
+    th,
+    thead,
+    tr {
+        border-color: #865aef;
+        border-style: solid;
+        border-width: 1px;
+
+        h2 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #261d3c;
+
+            b {
+                a {
+                    text-decoration: none;
+                }
+            }
+
+            strong {
+                a {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    table{
+     width: 100%;
+    }
+}
+
+.innerHTMLData1 {
+    margin-bottom: 10px;
+
+    tbody {
+        outline: 2px solid #865aef;
+        border-radius: 2px;
+        tr {
+            td {
+                padding: 10px;
+
+                a {
+                    text-decoration: none;
+                }
+            }
+
+            h1 {
+                font-size: 16px;
+                font-weight: 700;
+                color: #865aef;
+            }
+        }
+    }
+    table{
+        max-width: 675px;
+    }
+}
+
+.job-detail {
+    white-space: nowrap;
+    font-size: 16px;
+    font-weight: 600;
+    padding-right: 10px;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background-color: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #dcd0ff;
+}

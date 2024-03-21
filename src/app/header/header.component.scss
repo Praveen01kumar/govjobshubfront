@@ -1,0 +1,212 @@
+header {
+    position: fixed;
+    top: 0px;
+    background-color: #efebfb;
+    width: 100%;
+    z-index: 999;
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 8px 1% 4px 1%;
+        border-bottom: 1px solid #7f56d987;
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            width: 33%;
+
+            img {
+                width: 48px;
+                height: 28px;
+                margin-right: 6px;
+                cursor: pointer;
+            }
+
+            span {
+                font-size: 30px;
+                font-weight: 600;
+                line-height: 35px;
+                cursor: pointer;
+            }
+        }
+
+        .header {
+            width: 33%;
+
+            ul {
+                display: flex;
+                align-items: center;
+                list-style: none;
+                justify-content: center;
+                flex-wrap: nowrap;
+                margin: 0px;
+                padding: 0px;
+
+                li {
+                    color: #06241B;
+                    padding: 4px 0px;
+                    font-size: 16px;
+                    font-weight: 600;
+                    display: inline-block;
+                    position: relative;
+                    margin: 4px 18px;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+
+                    &::after {
+                        background: none repeat scroll 0 0 transparent;
+                        bottom: 0;
+                        content: "";
+                        display: block;
+                        height: 3px;
+                        left: 50%;
+                        position: absolute;
+                        background: #7f56d9;
+                        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+                        width: 0;
+                        border-radius: 4px;
+                    }
+
+                    &:hover:after {
+                        width: 100%;
+                        left: 0;
+                    }
+
+                }
+            }
+        }
+
+        .action {
+            width: 33%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            button {
+                width: 30px;
+                height: 30px;
+                padding: 0px;
+            }
+        }
+
+        .menu-action {
+            display: none;
+
+            button {
+                width: 30px;
+                height: 30px;
+                padding: 0px;
+            }
+        }
+    }
+}
+
+:host::ng-deep {
+    .mat-mdc-button-touch-target {
+        height: 30px !important;
+        width: 30px !important;
+
+    }
+
+    .action-btn {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        button {
+            color: #06241B;
+            border: none;
+            background-color: transparent;
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 2px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all ease 0.5s;
+
+            &:hover {
+                cursor: pointer;
+                background-color: #efebfb;
+            }
+        }
+    }
+}
+
+
+@media (min-width:0px) and (max-width:320px) {
+    header {
+        nav {
+            .header {
+                display: none;
+            }
+
+            .action {
+                display: none;
+            }
+
+            .menu-action {
+                display: block;
+            }
+        }
+    }
+}
+
+@media (min-width:320px) and (max-width:425px) {
+    header {
+        nav {
+            .header {
+                display: none;
+            }
+
+            .action {
+                display: none;
+            }
+
+            .menu-action {
+                display: block;
+            }
+        }
+    }
+}
+
+@media (min-width:425px) and (max-width:567px) {
+    header {
+        nav {
+            .header {
+                display: none;
+            }
+
+            .action {
+                display: none;
+            }
+
+            .menu-action {
+                display: block;
+            }
+        }
+    }
+}
+
+@media (min-width:567px) and (max-width:768px) {
+    header {
+        nav {
+            .header {
+                width: 60%;
+            }
+
+            .action {
+                width: 0%;
+            }
+
+            .logo {
+                width: 28%;
+            }
+        }
+    }
+}
